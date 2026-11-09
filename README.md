@@ -162,6 +162,10 @@ The experiments examine how configuration parameters affect operation cost, meas
 
 The first experiment measures disk I/O as the number of inserted records increases, with automatic reorganization disabled.
 
+![Chart: disk I/O operations versus number of inserted records](charts/records_without_reorganization.png)
+
+*Figure 1. Disk I/O operations relative to the number of inserted records, without automatic reorganization.*
+
 | Records (N) | Reads | Writes | Total I/O operations |
 | ---: | ---: | ---: | ---: |
 | 50 | 256 | 152 | 408 |
@@ -177,6 +181,10 @@ Without reorganization, read counts increase sharply for large workloads. Insert
 
 The second experiment examines the effect of alpha with automatic reorganization enabled and 5,000 inserted records.
 
+![Chart: disk I/O operations versus alpha](charts/alpha_effect.png)
+
+*Figure 2. Disk I/O operations relative to the page fill factor alpha, with automatic reorganization enabled.*
+
 | Alpha | Records (N) | Reads | Writes | Total I/O operations |
 | ---: | ---: | ---: | ---: | ---: |
 | 0.2 | 5,000 | 8,696 | 10,373 | 19,069 |
@@ -189,6 +197,10 @@ A lower alpha leaves more free slots in main-file pages after reorganization, al
 ### Reorganization Threshold
 
 The third experiment examines how the overflow-to-main-record ratio threshold affects disk I/O with automatic reorganization enabled.
+
+![Chart: disk I/O operations versus reorganization threshold](charts/reorganization_threshold.png)
+
+*Figure 3. Disk I/O operations relative to the reorganization threshold V/N, with automatic reorganization enabled.*
 
 | V/N | Reads | Writes | Total I/O operations |
 | ---: | ---: | ---: | ---: |
